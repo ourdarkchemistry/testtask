@@ -1,3 +1,19 @@
-_security_logout:
-    resource: security.route_loader.logout
-    type: service
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                check_path: /api/login
+                username_path: email
+                password_path: password
