@@ -1,0 +1,24 @@
+create_user:
+    path: /api/users
+    controller: App\Controller\UserController::createUser
+    methods: POST
+
+update_user:
+    path: /api/users/{id}
+    controller: App\Controller\UserController::updateUser
+    methods: PUT
+
+delete_user:
+    path: /api/users/{id}
+    controller: App\Controller\UserController::deleteUser
+    methods: DELETE
+
+get_user:
+    path: /api/users/{id}
+    controller: App\Controller\UserController::getUser
+    methods: GET
+
+login_user:
+    path: /api/login
+    controller: App\Controller\UserController::login
+    methods: POST
